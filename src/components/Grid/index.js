@@ -2,7 +2,7 @@ import React from "react";
 //styles
 import { Wrapper, Content } from "./Grid.style";
 
-export const Grid = ({ header, children }) => {
+const Grid = ({ header, children }) => {
   return (
     <Wrapper>
       <h1>{header}</h1>
@@ -10,3 +10,4 @@ export const Grid = ({ header, children }) => {
     </Wrapper>
   );
 };
+export default Grid;
