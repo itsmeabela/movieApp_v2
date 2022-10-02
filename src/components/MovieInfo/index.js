@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 //components
 import Thumb from "../Thumb/index";
 //config
@@ -9,7 +10,6 @@ import NoImage from "../../images/no_image.jpg";
 import { Wrapper, Content, Text } from "./MovieInfo.style";
 
 const MovieInfo = ({ movie }) => {
-  console.log(movie);
   return (
     <Wrapper backdrop={movie.backdrop_path}>
       <Content>
@@ -33,8 +33,11 @@ const MovieInfo = ({ movie }) => {
               <div className="score">{movie.vote_average}</div>
             </div>
             <div className="director">
-              <h3>DIECTOR{movie.directors.length > 1 ? "S" : ""}</h3>
-              {movie.directors.map((director) => (
+              <h3>
+                DIECTOR
+                {movie.directors && movie.directors.length > 1 ? "S" : ""}
+              </h3>
+              {movie.directors?.map((director) => (
                 <p key={director.id}>{director.name}</p>
               ))}
             </div>
@@ -45,4 +48,7 @@ const MovieInfo = ({ movie }) => {
   );
 };
 
+MovieInfo.propTypes = {
+  movie: PropTypes.object,
+};
 export default MovieInfo;

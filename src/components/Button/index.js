@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 //styles
 import { Wrapper } from "./Button.style";
 const Button = ({ text, handleClick }) => {
@@ -9,5 +9,8 @@ const Button = ({ text, handleClick }) => {
     </Wrapper>
   );
 };
-
+Button.prototype = {
+  text: PropTypes.string,
+  handleClick: PropTypes.func,
+};
 export default Button;

@@ -31,7 +31,7 @@ const Movie = () => {
         revenue={movie.revenue}
       />
       <Grid header="Actors">
-        {movie.actors.map((actor) => {
+        {movie.actors?.map((actor) => {
           console.log(actor);
           return (
             <Actor
