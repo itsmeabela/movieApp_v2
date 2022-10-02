@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import API from "../API";
 
 export const useMovieFetch = (movieId) => {
@@ -7,7 +7,7 @@ export const useMovieFetch = (movieId) => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchMovie = async (props) => {
+    const fetchMovie = async () => {
       try {
         setLoading(true);
         setError(false);
